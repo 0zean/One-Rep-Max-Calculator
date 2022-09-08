@@ -9,3 +9,6 @@
 **Requirments**
 - PyQt5
 - pyinstaller (if you wish to compile an exe yourself)
+
+
+<img src="https://github.com/0zean/One-Rep-Max-Calculator/blob/main/preview.png">
