@@ -43,5 +43,3 @@ app = QApplication(sys.argv)
 window = calc()
 window.show()
 sys.exit(app.exec_())
-
-
