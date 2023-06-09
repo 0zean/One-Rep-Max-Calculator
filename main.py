@@ -1,11 +1,12 @@
-import sys
 import math
+import sys
 
+from PyQt5 import QtCore
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import QApplication, QDialog
 from PyQt5.uic import loadUi
+
 from Ui_Calc import Ui_Dialog
-from PyQt5 import QtCore
 
 
 class calc(QDialog, Ui_Dialog):
@@ -14,6 +15,7 @@ class calc(QDialog, Ui_Dialog):
         self.setupUi(self)
         self.setWindowTitle("One-Rep Max Calc")
         self.pushButton.clicked.connect(self.on_pushButton_clicked)
+
     @pyqtSlot()
     def Epley(self):
         if int(self.lineEdit2.text()) > 1:
@@ -31,13 +33,13 @@ class calc(QDialog, Ui_Dialog):
     def avg(self):
         try:
             avg = int(5 * round(float(((int(self.Epley()) + int(self.Bryzcki()) + int(self.Mayhew())) / 3)) / 5))
-        except:
+        except ValueError:
             avg = "Enter Numbers"
         return avg
 
     def on_pushButton_clicked(self):
         self.label2.setText("ORM: " + str(self.avg()))
-        
+
 
 app = QApplication(sys.argv)
 window = calc()
